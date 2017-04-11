@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tools
+                <small>a persistent, editable, list of things</small>
+                <div class="pull-right">
+                    <small style="margin-right: 10px">
+                        <label for="tableSearch"></label>
+                        <input id="tableSearch" autofocus="true" ng-model="searchText" class="input" type="text" style="font-size: 20px;" placeholder="search">
+                    </small>
+                    <small><i class="fa fa-plus clickable" ng-click="edit()"></i></small>
+                    <small><i class="fa fa-gear clickable" ng-click="isSettingsOpen = !isSettingsOpen"></i></small>
+                </div>
+            </h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div ng-if="isSettingsOpen">
+                <label class="checkbox-inline" ng-repeat="col in columns">
+                    <input type="checkbox" ng-model="col.show"/> {{col.title}}
+                </label>
+            </div>
+            <table ng-table-dynamic="tableParams with columns" show-filter="true" class="table table-hover table-condensed table-bordered toolTable" style="margin-top: 10px;">
+                <tr ng-repeat="candidate in $data | filter:searchText">
+                    <td ng-repeat="col in $columns">
+                        <div ng-if="col.field == 'edit'">
+                            <i class="fa fa-edit clickable" ng-click="edit(candidate)"></i>
+                        </div>
+                        <div ng-if="col.field != 'edit'" ng-click="open(candidate)">
+                            {{candidate[col.field]}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

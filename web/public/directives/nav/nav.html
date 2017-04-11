@@ -1,0 +1,57 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sample WebApp</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="navItem in navbarItems" ui-sref-active="active">
+                    <a ui-sref="{{navItem.state}}">{{navItem.text}}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search Sample">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <li class="dropdown" uib-dropdown is-open="status.isopen">
+                    <a class="dropdown-toggle" id="single-button" type="button" uib-dropdown-toggle
+                       ng-disabled="disabled">
+                        Sample Dropdown <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="dropItem in dropdownItems" role="menuitem" ui-sref-active="active">
+                            <a ui-sref="{{dropItem.state}}">{{dropItem.text}}</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="menuitem" ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                    </ul>
+                </li>
+                <li ng-repeat="navItem in rightNavbarItems" ui-sref-active="active">
+                    <a ui-sref="{{navItem.state}}">{{navItem.text}}</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-hide="isAuthenticated" ui-sref="login">Sign in</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-show="isAuthenticated" ng-click="logout()" style="cursor:pointer;">Sign out</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-show="isAuthenticated" ui-sref="account"> Welcome, {{user.firstName}}! </a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,74 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">{{tool.name}}</h4>
+    </div>
+    <form role="form" name="toolForm" class="form-horizontal">
+        <div class="modal-body">
+            <div style="text-align: left">
+                <div class="row">
+                    <div class="form-group col-lg-6 required">
+                        <label for="serviceName" class="control-label col-sm-3">Name</label>
+
+                        <div class="col-sm-9">
+                            <input id="serviceName" class="form-control" type="text" ng-model="tool.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 required">
+                        <label for="server" class="control-label col-sm-3">URL</label>
+
+                        <div class="col-sm-9">
+                            <input id="server" class="form-control" type="text" ng-model="tool.url" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6 required">
+                        <label for="port" class="control-label col-sm-3">Port</label>
+
+                        <div class="col-sm-9">
+                            <input id="port" class="form-control" type="text" ng-model="tool.port" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 required">
+                        <label for="version" class="control-label col-sm-3">Version</label>
+
+                        <div class="col-sm-9">
+                            <input id="version" class="form-control" type="text" ng-model="tool.version" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6 required">
+                        <label for="notes" class="control-label col-sm-3">Notes</label>
+
+                        <div class="col-sm-9">
+                            <input id="notes" class="form-control" type="text" ng-model="tool.notes">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-if="errorMessage">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error </strong> {{errorMessage}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" style="float: left" ng-click="delete(tool)"><p
+                    class="fa fa-trash-o" style="margin-bottom: 0"></p> Delete
+            </button>
+
+            <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+            <button type="submit" class="btn btn-primary" ng-click="update(tool)" ng-if="!isNewTool">
+                Save changes {{newTool}} {{isNewTool}}
+            </button>
+            <button type="submit" class="btn btn-primary" ng-click="create(tool)" ng-if="isNewTool">
+                Add Tool {{newTool}} {{isNewTool}}
+            </button>
+        </div>
+    </form>
+</div>

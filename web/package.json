@@ -1,0 +1,65 @@
+{
+  "name": "SAM-D",
+  "version": "3.0.0",
+  "description": "A starter kit for building applications with the SAM-D stack. Java Spring | Angular.js | MongoDB running inside a  Docker container",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adf4st/swarmview.git"
+  },
+  "keywords": [
+    "SAM-D",
+    "alexfabian",
+    "angular",
+    "spring",
+    "mongo",
+    "docker",
+    "samd"
+  ],
+  "author": "Alex Fabian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adf4st/swarmview/issues"
+  },
+  "homepage": "https://github.com/adf4st/swarmview#readme",
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "browserify-css": "^0.10.0",
+    "font-awesome": "^4.7.0",
+    "sassify": "^2.0.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "express": "~4.7.2",
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.x",
+    "angular-jwt": "^0.1.9",
+    "angular-loader": "^1.6.x",
+    "angular-mocks": "^1.6.x",
+    "angular-route": "^1.6.1",
+    "angular-spinner": "^1.0.x",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-mask": "^1.8.x",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap-css-only": "^3.3.x",
+    "components-font-awesome": "^4.7.0",
+    "es5-shim": "^4.5.9",
+    "jquery": "^3.1.1",
+    "ng-table": "^4.0.x",
+    "spin.js": "^2.3.x"
+  },
+  "browser": {
+    "es5-sham": "./node_modules/es5-shim/es5-sham.min.js",
+    "es5-shim": "./node_modules/es5-shim/es5-shim.min.js"
+  },
+  "config": {
+    "browserify-css": {
+      "autoInject": true,
+      "minify": true,
+      "rootDir": "."
+    }
+  }
+}

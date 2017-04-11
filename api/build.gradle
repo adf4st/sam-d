@@ -1,0 +1,60 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'swarmview'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-hateoas')
+	compile('org.springframework.boot:spring-boot-starter-security')
+//	compile('org.springframework.data:spring-data-rest-hal-browser')
+//	compile('org.springframework.boot:spring-boot-starter-jersey')
+//	compile('org.springframework.session:spring-session')
+
+	// dependencies for TEA data retriever
+	compile 'org.apache.httpcomponents:httpclient:4.5.3'
+	compile 'commons-io:commons-io:2.2'
+	compile 'org.springframework:spring-context-support:4.1.4.RELEASE'
+	compile 'org.springframework:spring-tx:4.2.4.RELEASE'
+
+	// json web token
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.6.0'
+
+
+
+//
+//	runtime('org.springframework.boot:spring-boot-devtools')
+	runtime('mysql:mysql-connector-java')
+
+	compileOnly('org.projectlombok:lombok')
+
+//	testCompile('org.springframework.boot:spring-boot-starter-test')
+//	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+}

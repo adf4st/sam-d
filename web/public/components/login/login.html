@@ -1,0 +1,77 @@
+<div class="container login">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <div ng-hide="register">Sign in</div>
+                    <div ng-show="register">Create new account</div>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="#" method="POST">
+                        <fieldset>
+                            <div class="row">
+                                <div class="center-block">
+                                    <img class="profile-img"
+                                         src="img/user.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-envelope"></i>
+												</span>
+                                            <input class="form-control" placeholder="Email" name="email" type="text" ng-model="username" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-show="register">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                            <input class="form-control" placeholder="First name" name="firstName" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group"  ng-show="register">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                            <input class="form-control" placeholder="Last name" name="lastName" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</span>
+                                            <input class="form-control" placeholder="Password" name="password" type="password" ng-model="password" ng-keyup="$event.keyCode == 13 && loginOrRegister()">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-show="register">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</span>
+                                            <input class="form-control" placeholder="Confirm password" name="password" type="password" ng-model="passwordConfirm" g-keyup="$event.keyCode == 13 && loginOrRegister()">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" >
+                                        <input ng-hide="register" class="btn btn-lg btn-primary btn-block" value="Sign in" ng-click="loginOrRegister()">
+                                        <input ng-show="register" class="btn btn-lg btn-success btn-block" value="Register" ng-click="loginOrRegister()">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="panel-footer text-center">
+                    <div ng-hide="register"> Don't have an account! <a href="" ng-click="register = !register"> Sign Up Here </a> </div>
+                    <div ng-show="register"> Already have an account? <a href="" ng-click="register = !register"> Sign in </a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

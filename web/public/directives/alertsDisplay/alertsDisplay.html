@@ -1,0 +1,7 @@
+<div ng-repeat="alert in alerts">
+    <div class="alert alert-dismissible mainAlert" role="alert" ng-class="alert.type" style="z-index: 10">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="closeAlert(alert)"><span
+                aria-hidden="true">&times;</span></button>
+        <strong>{{alert.title}}</strong> {{alert.text}}
+    </div>
+</div>

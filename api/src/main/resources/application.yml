@@ -1,0 +1,13 @@
+#management.security.enabled: false
+server.port: 8080
+demo.security.jwt:
+  tokenExpirationTime: 15 # Number of minutes
+  refreshTokenExpTime: 60 # Number of minutes
+  tokenIssuer: http://alexfabian.com
+  tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus  #TODO: CHANGE THIS
+server:
+  context-path: /api
+spring:
+  data:
+    mongodb:
+      host: localhost
