@@ -1,0 +1,30 @@
+version: '2'
+
+services: 
+  web:
+    build: ./web
+    container_name: web
+    ports: 
+      - "80:80"
+    environment: 
+      - WEB_PORT=80
+      - API_HOST=localhost      # should not contain http://, ports, or paths
+      - API_PORT=8080
+      - API_CONTEXT_ROOT=/api   # base path of API with the leading slash. If '/' is the base path then don't set this env var
+  api:
+    build: ./api
+    container_name: api
+    ports: 
+      - "8080:8080"
+    environment:
+      # - spring.data.mongodb.uri=mongodb://db:27017
+      - spring.data.mongodb.host=db
+      # - MONGO_HOST=db
+      # - MONGO_PORT=27017
+  db:
+    image: 'mongo:latest'
+    container_name: mongo
+    environment:
+      - AUTH=no
+    volumes:
+      - /data/db
