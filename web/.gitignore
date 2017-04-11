@@ -5,6 +5,7 @@ npm-debug.log*
 
 # Dependency directories
 node_modules/
+/public/bundle.js
 
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm

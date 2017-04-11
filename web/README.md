@@ -1,4 +1,8 @@
 
+## Getting Started
+
+1) `npm install`
+1) `npm run build-start`
 
 ## Browserify
 Browserify is used to compile all js files into a single `app.js` file using require().   

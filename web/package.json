@@ -4,11 +4,13 @@
   "description": "A starter kit for building applications with the SAM-D stack. Java Spring | Angular.js | MongoDB running inside a  Docker container",
   "main": "server.js",
   "scripts": {
+    "build-start" : "npm run build-js && npm start",
+    "build-js" : "browserify -g browserify-css ./public/app.js > ./public/bundle.js",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adf4st/swarmview.git"
+    "url": "git+https://github.com/adf4st/sam-d.git"
   },
   "keywords": [
     "SAM-D",
