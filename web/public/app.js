@@ -34,7 +34,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, jwtOptio
             tokenGetter: [function () {
                 return localStorage.getItem('id_token');
             }],
-            whiteListedDomains: ["localhost", "alexfabian.net"],  // whiteListedDomains should NOT contain http:, port numbers, or paths
+            // TODO : read whiteListedDomains from environment variable
+            // TODO : if you're deploying this you must manually include the prod API hostname here!!
+            whiteListedDomains: ["localhost", "alexfabian.net", "52.201.231.11"],  // whiteListedDomains should NOT contain http:, port numbers, or paths
             unauthenticatedRedirector: ['$state', 'AlertsService', function ($state, AlertsService) {
                 $state.go('login');
                 AlertsService.addAlert({
