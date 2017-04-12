@@ -149,7 +149,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     /* To allow Pre-flight [OPTIONS] request from browser */
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**"); //TODO: commenting out this line fixes the OPTIONS for auth/login
+//        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**"); //TODO: commenting out this line fixes the OPTIONS for auth/login
     }
 
 

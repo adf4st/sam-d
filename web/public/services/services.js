@@ -164,7 +164,7 @@ services.factory('UserService', ['$http','jwtHelper', 'ConfigService', '$sce', '
                     text : "",
                     type : "alert-success"
                 });
-                $state.go('account');
+                // $state.go('account');
             },
             function (error) {
                 AlertsService.addAlert({

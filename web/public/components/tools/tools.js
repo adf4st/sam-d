@@ -84,7 +84,7 @@ contactView.controller('ToolsController', function($scope, Tools, AlertsService,
             console.log('Modal dismissed at: ' + new Date());
         });
 
-        console.log("opening modal window:" + selectedTool.name != null ? selectedTool.name : " new tool.");
+            console.log("opening modal window:" + selectedTool != null ? selectedTool.name : " new tool.");
 
     };
 });

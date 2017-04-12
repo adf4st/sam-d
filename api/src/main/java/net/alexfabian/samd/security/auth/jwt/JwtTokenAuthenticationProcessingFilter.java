@@ -6,6 +6,7 @@ import net.alexfabian.samd.security.auth.jwt.extractor.TokenExtractor;
 import net.alexfabian.samd.security.config.WebSecurityConfig;
 import net.alexfabian.samd.security.model.token.RawAccessJwtToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContext;
@@ -47,7 +48,10 @@ public class JwtTokenAuthenticationProcessingFilter extends AbstractAuthenticati
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
         CORSFilter.setCORSHeaders(response);
-
+        if (HttpMethod.OPTIONS.name().equals(request.getMethod())){
+            response.setStatus(200);
+            return null;
+        }
         RawAccessJwtToken token = getRawAccessJwtTokenFromRequest(request);
         return getAuthenticationManager().authenticate(new JwtAuthenticationToken(token));
     }
