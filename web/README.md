@@ -4,8 +4,12 @@ Angular.js web front-end for the SAM-D stack starter application.
 
 ## Getting Started
 
-1) `npm install`
-1) `npm run build-start`
+#### Starting web-app from scratch
+1. `npm install`
+1. `npm run build-start`
+
+### Building web-app 
+1. `npm run build-js`
 
 ## Dockerfile
 The Dockerfile in the root web directory starts from a base node 6 image and copies in the `package.json`
