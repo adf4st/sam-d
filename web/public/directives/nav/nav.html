@@ -1,31 +1,30 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="btn navbar-toggle" ng-click="isCollapsed = !isCollapsed">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Sample WebApp</a>
+            <a class="navbar-brand" ui-sref="home">SAM-D Sample App</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" uib-collapse="isCollapsed">
             <ul class="nav navbar-nav">
                 <li ng-repeat="navItem in navbarItems" ui-sref-active="active">
                     <a ui-sref="{{navItem.state}}">{{navItem.text}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search Sample">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                <!--<form class="navbar-form navbar-left">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search Sample">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
                 <li class="dropdown" uib-dropdown is-open="status.isopen">
                     <a class="dropdown-toggle" id="single-button" type="button" uib-dropdown-toggle
                        ng-disabled="disabled">

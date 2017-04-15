@@ -91,4 +91,5 @@ require('./components/login/login.js');
 require('./components/tools/tools.js');
 require('./components/tools/toolModalController.js');
 require('./components/account/account.js');
+require('./components/private/private.js');
 

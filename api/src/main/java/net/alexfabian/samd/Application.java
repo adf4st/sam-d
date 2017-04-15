@@ -36,13 +36,29 @@ public class Application {
             userRepository.deleteAll();
 
             Tool tool1 = new Tool();
-            tool1.setName("tool 1");
+            tool1.setName("Google");
             tool1.setNotes("some notes about the tool");
             tool1.setPort(80);
-            tool1.setUrl("www.google.com");
+            tool1.setUrl("http://www.google.com");
             tool1.setVersion("1.1.1");
-
             toolRepository.save(tool1);
+
+            Tool tool2 = new Tool();
+            tool2.setName("CERN");
+            tool2.setNotes("The CERN laboratory was founded in 1954");
+            tool2.setPort(80);
+            tool2.setUrl("https://home.cern/");
+            tool2.setVersion("2");
+            toolRepository.save(tool2);
+
+            Tool tool3 = new Tool();
+            tool3.setName("Car and Driver");
+            tool3.setNotes("Get the hottest automotive news");
+            tool3.setPort(80);
+            tool3.setUrl("http://www.caranddriver.com/");
+            tool3.setVersion("3");
+            toolRepository.save(tool3);
+
 
             Role adminRole = new Role();
             adminRole.setName("ADMIN");

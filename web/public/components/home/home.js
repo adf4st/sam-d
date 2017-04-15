@@ -12,8 +12,8 @@ homeView.config(function ($stateProvider) {
         })
 });
 
-homeView.controller('HomeCtrl', ['$scope', 'AlertsService', '$state',
-    function ($scope, AlertsService, $state) {
+homeView.controller('HomeCtrl', ['$scope', 'AlertsService', '$state', '$window',
+    function ($scope, AlertsService, $state, $window) {
 
         var sampleAlerts = [
             {
@@ -40,6 +40,7 @@ homeView.controller('HomeCtrl', ['$scope', 'AlertsService', '$state',
         ];
 
         $scope.randomAlert = function () {
+            $window.scrollTo(0, 0);
             AlertsService.addAlert( angular.copy(sampleAlerts[Math.floor(Math.random() * 3)]) );
         };
 

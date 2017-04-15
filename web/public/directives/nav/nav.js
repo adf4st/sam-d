@@ -13,6 +13,7 @@ angular.module('myApp')
     })
 
     .controller('NavbarController', ['$scope', '$location', '$rootScope', '$state', 'UserService', 'AlertsService', function ($scope, $location, $rootScope, $state, UserService, AlertsService) {
+        $scope.isCollapsed = true;
 
         // re-pupulate rootScope.user on page refresh
         UserService.initUser();
@@ -25,8 +26,9 @@ angular.module('myApp')
 
         $scope.navbarItems = [
             {text: "Home", state: "home"},
-            {text: "Staff", state: "staff"},
-            {text: "Tools", state: "tools"}
+            {text: "Cards", state: "staff"},
+            {text: "List", state: "tools"},
+            {text: "Private", state: "private"}
         ];
 
         $scope.rightNavbarItems = [
@@ -35,7 +37,7 @@ angular.module('myApp')
 
         $scope.dropdownItems = [
             {text: "Home", state: "home"},
-            {text: "Staff", state: "staff"},
+            {text: "Cards", state: "staff"},
             {text: "Contact", state: "contact"}
         ];
 

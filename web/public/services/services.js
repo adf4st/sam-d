@@ -133,6 +133,15 @@ services.factory('UserService', ['$http','jwtHelper', 'ConfigService', '$sce', '
         };
     }
 
+    function getAllUsers() {
+        var request = {
+            method: 'GET',
+            url : baseUrl + "/users"
+        };
+
+        return $http(request);
+    }
+
     function createUser(user) {
         var request = {
             method: 'POST',
@@ -195,7 +204,8 @@ services.factory('UserService', ['$http','jwtHelper', 'ConfigService', '$sce', '
         login : login,
         getUserDetails : getUserDetails,
         updateUser : updateUser,
-        initUser : initUser
+        initUser : initUser,
+        getAllUsers : getAllUsers
     }
 
 }]);

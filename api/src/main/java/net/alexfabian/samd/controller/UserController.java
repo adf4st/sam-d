@@ -40,6 +40,9 @@ public class UserController {
         UserContext userContext = jwtAuthenticationProvider.getUserContextFromRequest(request);
         if(doesUserHaveAdminRole(userContext)){
             List<User> users = userRepository.findAll();
+            for(User user : users){
+                user.setPassword("xxxx");
+            }
             return new ResponseEntity(users, HttpStatus.OK);
         }
 

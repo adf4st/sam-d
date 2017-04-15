@@ -11,10 +11,7 @@ contactView.config(function($stateProvider) {
         state('tools', {
             url: "/tools",
             templateUrl: 'components/tools/tools.html',
-            controller: 'ToolsController',
-            data: {
-                requiresLogin: true
-            }
+            controller: 'ToolsController'
     });
 });
 
@@ -44,12 +41,15 @@ contactView.controller('ToolsController', function($scope, Tools, AlertsService,
         });
     }
 
+    $scope.screenWidth = $window.innerWidth;
+
+
     $scope.columns = [
         { field: "name",        title: "Name",          sortable: "name ",       filter:{name    : "text"},   show: true },
-        { field: "url",         title: "Url",           sortable: "url",         filter:{url     : "text"},   show: true },
-        { field: "port",        title: "Port",          sortable: "port"    ,    filter:{port    : "text"},   show: true },
-        { field: "version",     title: "Version",       sortable: "version",     filter:{version : "text"},   show: true },
-        { field: "notes",       title: "Notes",         sortable: "notes",       filter:{notes   : "text"},   show: true },
+        { field: "url",         title: "Url",           sortable: "url",         filter:{url     : "text"},   show: ($scope.screenWidth > 700) },
+        { field: "port",        title: "Port",          sortable: "port"    ,    filter:{port    : "text"},   show: ($scope.screenWidth > 700) },
+        { field: "version",     title: "Version",       sortable: "version",     filter:{version : "text"},   show: ($scope.screenWidth > 700) },
+        { field: "notes",       title: "Notes",         sortable: "notes",       filter:{notes   : "text"},   show: ($scope.screenWidth > 700) },
         { field: "edit",        title: "Edit",          show: true }
     ];
 
