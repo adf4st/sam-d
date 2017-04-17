@@ -27,9 +27,9 @@ The docker-compose-build.yml in the root directory starts a mongodb, api, and we
 4. from the root sam-d directory run `docker-compose -f docker-compose-build.yml up`
 
 ## Development
-Check out the readme in the Web and API projects for more info about the respective code bases. 
-[Web](https://github.com/adf4st/sam-d/tree/master/web)
-[API](https://github.com/adf4st/sam-d/tree/master/api)
+Check out the readme in the Web and API projects for more info about the respective code bases.   
+[Web](https://github.com/adf4st/sam-d/tree/master/web)  
+[API](https://github.com/adf4st/sam-d/tree/master/api)  
 
 ## Demo Deployment
 The SAM-D applicaiton stack demo is deployed on Amazon Elastic Container Service (ECS). Creating Docker containers for each layer makes it easy to deploy the entire stack on any hosting or platform that supports Docker.
